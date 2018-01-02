@@ -44,7 +44,7 @@ public abstract class Ticket {
     @Override
     public String toString(){
         this.calculatePrice();
-        return "ticket price" + this.getPrice();
+        return "ticket price " + this.getPrice() + "\n";
     }
     
 }

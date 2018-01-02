@@ -1,9 +1,35 @@
 package projet.poo;
 
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import javax.swing.JComboBox;
 
 public class GUI extends javax.swing.JFrame {
+    
+    static GregorianCalendar date1 = new GregorianCalendar(2018, 1, 23, 10, 15);
+    static GregorianCalendar date2 = new GregorianCalendar(2018, 1, 22, 22, 30);
+    static GregorianCalendar date3 = new GregorianCalendar(2018, 1, 22, 17, 45);
+    static GregorianCalendar date4 = new GregorianCalendar(2018, 1, 23, 74, 00);
+    
+    static Room room1 = new Room(80);
+    static Room room2 = new Room(100);
+    
+    static Movie movie1 = new Movie("Avatar", room1, date1);
+    static Movie movie2 = new Movie("Life of Pi", room1, date2);
+    static Movie movie3 = new Movie("Inception", room2, date3);
+    static Movie movie4 = new Movie("Shutter Island", room2, date4);
+    
+    static ArrayList<Movie> movies = new ArrayList<>();
+
+    public Movie getMovie1() {
+        return movie1;
+    }
+
+    public void addTojComboBox1(String string) {
+        jComboBox1.addItem(string);
+    }
+    
+    
 
     /**
      * Creates new form GUI
@@ -190,6 +216,11 @@ public class GUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
+                movies.add(movie1);
+                movies.add(movie2);
+                movies.add(movie3);
+                movies.add(movie4);
+                
             }
         });
         

@@ -1,6 +1,8 @@
 package projet.poo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class ProjetPOO {
     static ArrayList<Client> clients = new ArrayList<>();
@@ -18,7 +20,7 @@ public class ProjetPOO {
     public static String showClients(){
         String s = "";
         for (int i = 0; i < clients.size(); i++)
-            s.concat(clients.get(i).toString());
+            s = s.concat(clients.get(i).toString());
         return s;
     }
     
@@ -32,4 +34,9 @@ public class ProjetPOO {
         c.addTicket(t);
     }
     
+    public void addMovies(){
+        Movie m = GUI.getMovie1();
+        GUI.addTojComboBox1(GUI.getMovie1().toString());
+    }
+
 }

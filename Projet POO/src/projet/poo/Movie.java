@@ -18,6 +18,12 @@ public class Movie {
         this.room = room;
     }
     
+    public Movie(String name, Room room, GregorianCalendar dateTime) {
+        this.name = name;
+        this.room = room;
+        this.dateTime = dateTime;
+    }
+    
     public Movie(String name, ArrayList<Ticket> tickets, Room room, GregorianCalendar dateTime) {
         this.name = name;
         this.tickets = tickets;
@@ -63,7 +69,9 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" + "name=" + name + ", tickets=" + tickets + ", room=" + room + ", dateTime=" + dateTime + '}';
+        return this.name + " " + this.dateTime.DAY_OF_YEAR + " " +
+                this.dateTime.MONTH + " " + this.dateTime.HOUR_OF_DAY + " " +
+                this.dateTime.MINUTE;
     }
     
     public void addTicket(Client client){
