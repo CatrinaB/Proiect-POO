@@ -159,7 +159,15 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    static Room r1 = new Room(1);
+    static Room r2 = new Room(2, 52);
+    static Room r3 = new Room(7);
+    
+    static Movie m1 = new Movie("Titanic", r1);
+    static Movie m2 = new Movie("Avatar", r3);
+    static Movie m3 = new Movie("Star Wars 8", r1);
+    static Movie m4 = new Movie("Ghinionistul", r2);
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Client c = new Client();
         if (jRadioButton1.isSelected() == true)
