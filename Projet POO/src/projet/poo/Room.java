@@ -3,20 +3,24 @@ package projet.poo;
 public class Room {
     private int noRoom;
     private int noPlaces;
+    private int noPlacesLeft;
     
     public Room (){
         this.noRoom = 1; 
         this.noPlaces = 80;
+        this.noPlacesLeft = this.noPlaces;
     }
     
     public Room (int noPlaces){
         this.noRoom = 1;
         this.noPlaces = noPlaces;
+        this.noPlacesLeft = this.noPlaces;
     }
     
     public Room (int noRoom, int noPlaces){
         this.noRoom = noRoom;
         this.noPlaces = noPlaces;
+        this.noPlacesLeft = this.noPlaces;
     }
 
     public int getNoRoom() {
@@ -33,5 +37,17 @@ public class Room {
 
     public void setNoPlaces(int noPlaces) {
         this.noPlaces = noPlaces;
+    }
+
+    public int getNoPlacesLeft() {
+        return noPlacesLeft;
+    }
+
+    public void setNoPlacesLeft(int noPlacesLeft) {
+        this.noPlacesLeft = noPlacesLeft;
+    }
+    
+    public void newTicket(){
+        this.noPlacesLeft--;
     }
 }

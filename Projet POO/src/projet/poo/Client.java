@@ -63,6 +63,7 @@ public class Client {
 
     public void addTicket(Ticket ticket) {
         tickets.add(ticket);
+        ticket.getMovie().getRoom().newTicket();
     }
 
     @Override

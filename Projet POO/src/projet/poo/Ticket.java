@@ -49,7 +49,8 @@ public abstract class Ticket {
                 movie.getDateTime().get(GregorianCalendar.DAY_OF_MONTH) + "." + 
                 movie.getDateTime().get(GregorianCalendar.MONTH) + "\nTime: " + 
                 movie.getDateTime().get(GregorianCalendar.HOUR_OF_DAY) + ":" + 
-                movie.getDateTime().get(GregorianCalendar.MINUTE);
+                movie.getDateTime().get(GregorianCalendar.MINUTE) + "\nRoom: " +
+                movie.getRoom().getNoRoom();
     }
     
 }

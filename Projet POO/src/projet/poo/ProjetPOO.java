@@ -11,7 +11,7 @@ public class ProjetPOO {
     static final private GregorianCalendar date3 = new GregorianCalendar(2018, 1, 22, 17, 45);
     static final private GregorianCalendar date4 = new GregorianCalendar(2018, 1, 23, 14, 20);
     
-    static final private Room room1 = new Room(1, 80);
+    static final private Room room1 = new Room(1, 4);
     static final private Room room2 = new Room(2, 100);
     
     static final private Movie movie1 = new Movie("Avatar", room1, date1);
@@ -46,7 +46,6 @@ public class ProjetPOO {
     }
     
     public static void createTicket(Client c){
-        addToArray();
         Ticket t;
         int index = GUI.getjComboBox1Value();
         if (c.isStudent() == true)
