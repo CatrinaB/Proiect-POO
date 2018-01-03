@@ -67,12 +67,15 @@ public class Client {
 
     @Override
     public String toString() {
+        tickets.get(0).calculatePrice();
         String string = "";
-        string = string.concat(this.firstName + " " + this.lastName + " " + this.id +
-                " " + this.student);
-        for (int i = 0; i < tickets.size(); i++)
-            string = string.concat(" " + tickets.get(i).toString());
-        string = string.concat("\n");
+        string = string.concat("Client: " + this.firstName + " " + 
+                this.lastName + "\nStudent: " + this.student + 
+                tickets.get(0).toString() + "\nNumber of tickets: " + 
+                tickets.size() + "\nTotal cost: " + tickets.size() * 
+                tickets.get(0).getPrice());
+
+        string = string.concat("\n\n");
 
         return string;
     }

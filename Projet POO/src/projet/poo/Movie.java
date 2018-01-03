@@ -69,9 +69,10 @@ public class Movie {
 
     @Override
     public String toString() {
-        return this.name + " " + this.dateTime.DAY_OF_YEAR + " " +
-                this.dateTime.MONTH + " " + this.dateTime.HOUR_OF_DAY + " " +
-                this.dateTime.MINUTE;
+        return this.name + " " + this.dateTime.get(GregorianCalendar.DAY_OF_MONTH)
+                + "." + this.dateTime.get(GregorianCalendar.MONTH) + " " + 
+                this.dateTime.get(GregorianCalendar.HOUR_OF_DAY) + ":" +
+                this.dateTime.get(GregorianCalendar.MINUTE);
     }
     
     public void addTicket(Client client){

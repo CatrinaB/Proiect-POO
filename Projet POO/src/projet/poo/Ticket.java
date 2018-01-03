@@ -1,5 +1,7 @@
 package projet.poo;
 
+import java.util.GregorianCalendar;
+
 public abstract class Ticket {
     
     private Client client;
@@ -43,8 +45,11 @@ public abstract class Ticket {
     
     @Override
     public String toString(){
-        this.calculatePrice();
-        return "ticket price " + this.getPrice() + "\n";
+        return "\nMovie: " + movie.getName() + "\nDate: " + 
+                movie.getDateTime().get(GregorianCalendar.DAY_OF_MONTH) + "." + 
+                movie.getDateTime().get(GregorianCalendar.MONTH) + "\nTime: " + 
+                movie.getDateTime().get(GregorianCalendar.HOUR_OF_DAY) + ":" + 
+                movie.getDateTime().get(GregorianCalendar.MINUTE);
     }
     
 }

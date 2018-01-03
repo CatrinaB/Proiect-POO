@@ -1,14 +1,30 @@
 package projet.poo;
 
 public class Room {
+    private int noRoom;
     private int noPlaces;
     
     public Room (){
-        noPlaces = 80;
+        this.noRoom = 1; 
+        this.noPlaces = 80;
     }
     
     public Room (int noPlaces){
+        this.noRoom = 1;
         this.noPlaces = noPlaces;
+    }
+    
+    public Room (int noRoom, int noPlaces){
+        this.noRoom = noRoom;
+        this.noPlaces = noPlaces;
+    }
+
+    public int getNoRoom() {
+        return noRoom;
+    }
+
+    public void setNoRoom(int noRoom) {
+        this.noRoom = noRoom;
     }
 
     public int getNoPlaces() {
