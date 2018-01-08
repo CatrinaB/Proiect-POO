@@ -26,12 +26,14 @@ public class ProjetPOO {
     //}
 
     public static Client constructClient(String firstName, String lastName, boolean isStudent){
+        //creeaza clienti si ii adauga in clista de clienti
         Client c = new Client(firstName, lastName, isStudent);
         clients.add(c);
         return c;
     }
     
     public static String showClients(){
+        //apeleaza lista de clienti si ii afiseaza in fereastra
         String s = "";
         for (int i = 0; i < clients.size(); i++)
             s = s.concat(clients.get(i).toString());
@@ -39,6 +41,7 @@ public class ProjetPOO {
     }
     
     public static void addToArray(){
+        //adauga filmele in lista de filme din caseta
         movies.add(movie1);
         movies.add(movie2);
         movies.add(movie3);
@@ -46,6 +49,7 @@ public class ProjetPOO {
     }
     
     public static void createTicket(Client c){
+        //creeaza biletele de film, in functie de tipul de client (student, sau nu)
         Ticket t;
         int index = GUI.getjComboBox1Value();
         if (c.isStudent() == true)

@@ -2,6 +2,8 @@ package projet.poo;
 
 import java.util.GregorianCalendar;
 
+// clasa abstracta ce va calcula preturile biletelor
+
 public abstract class Ticket {
     
     private Client client;

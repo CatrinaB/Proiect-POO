@@ -11,6 +11,6 @@ public class StudentTicket extends Ticket{
     }
     
     public void calculatePrice(){
-        this.setPrice(10);
+        this.setPrice(10); //se calculeaza pretul biletului pentru un student
     }
 }

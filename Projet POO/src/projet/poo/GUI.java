@@ -186,10 +186,12 @@ public class GUI extends javax.swing.JFrame {
     public static void emptyFieldErrorBox()
     {
         JOptionPane.showMessageDialog(null, "You need to complete all the fields!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        //eroare in cazul in care nu un camp este necompletat
     }
 
     public static void wrongCharacterErrorBox(){
         JOptionPane.showMessageDialog(null, "Your name can't contain numbers!", "Error!", JOptionPane.INFORMATION_MESSAGE);
+        //eroare in cazul in care nu un camp este necompletat
     }
     
     public static void tooManyTicketsErrorBox(){
@@ -198,21 +200,24 @@ public class GUI extends javax.swing.JFrame {
             case 0:
                 JOptionPane.showMessageDialog(null, "There are no places left",
                         "Error!", JOptionPane.INFORMATION_MESSAGE);
+                //eroare in cazul in care toate biletele pentru un anumit film sunt vandute
                 break;
             case 1:
                 JOptionPane.showMessageDialog(null, "There is only 1 place "
                         + "left", "Error!", JOptionPane.INFORMATION_MESSAGE);
+                //eroare in cazul in care mai este doa run loc disponibil
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "There are only " + places +
                         " places left", "Error!", JOptionPane.INFORMATION_MESSAGE);
+                //eroare in cazul in care mai sunt n locuri disponibile, dar mai putine decat comanadate de client
                 break;
         }
         
     }
    
     public void noErrorAction(){
-        Client c = new Client();
+        Client c = new Client(); // se creeaza un nou client, caruia i se adauga biletele cumparate
         if (jRadioButton1.isSelected() == true)
             c = ProjetPOO.constructClient(jTextField1.getText(), jTextField2.getText(), true);
         else
@@ -241,6 +246,7 @@ public class GUI extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ProjetPOO.addToArray();
+        //creeaza si rezerva un anumit numar de bilete folosind un slider, pentru un singur client
         if(jTextField1.getText().equalsIgnoreCase("") == true || 
                 jTextField2.getText().equalsIgnoreCase("") == true || 
                 (jRadioButton1.isSelected() == false &&
@@ -264,6 +270,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        //confirma eroarea din momentul cand sunt introduse cifre in loc de litere
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
             wrongCharacterErrorBox();
             evt.consume();
@@ -271,6 +278,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+        //confirma eroarea din momentul cand sunt introduse cifre in loc de litere
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'){
             wrongCharacterErrorBox();
             evt.consume();
